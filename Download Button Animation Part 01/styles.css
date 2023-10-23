@@ -1,0 +1,183 @@
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#ms-container {
+	width: 100%;
+	height: 100vh;
+	background: #000000;
+}
+
+.ms-content {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: 10px solid #2ea4f2;
+	border-radius: 100%;
+}
+
+.ms-content-inside {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.ms-line-down-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: rotate(0deg);
+	transition: transform 0s ease;
+}
+#ms-download {
+	display: none;
+}
+#ms-download:checked ~ .ms-line-down-container {
+	transform: rotate(-360deg);
+	transition: transform 1.5s ease 1.25s;
+}
+
+.ms-line-down {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	width: 10px;
+	height: 125px;
+	background: #FFFFFF;
+	border-radius: 50px;
+	transition: height .5s ease;
+}
+
+#ms-download:checked ~ .ms-line-down-container .ms-line-down {
+	height: 10px;
+	top: -20px;
+	animation: ms-bounce .5s forwards .55s;
+}
+#ms-download:checked ~ .ms-line-down-container .ms-line-down:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -94px;
+	right: 0;
+	bottom: 0;
+	width: 200px;
+	height: 200px;
+	border: 10px solid transparent;
+	border-radius: 100%;
+	animation: ms-border-fill .5s forwards 3s;
+}
+
+.ms-line-point {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 58px;
+	height: 130px;
+	transition: height .15s ease .45s;
+}
+
+#ms-download:checked ~ .ms-line-point {
+	height: 60px;
+}
+
+#ms-download:checked ~ .ms-line-point:before {
+	transform: rotate(90deg);
+	right: -10px;
+	animation: ms-check-right .25s forwards 3s;
+}
+
+#ms-download:checked ~ .ms-line-point:after {
+	transform: rotate(-90deg);
+	left: -10px;
+	animation: ms-check-left .25s forwards 3s;
+}
+
+.ms-line-point:before,
+.ms-line-point:after {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 75px;
+	bottom: -10px;
+	background: #FFFFFF;
+	border-radius: 50px;
+	transition: transform .15s ease .47s, left .15s ease .47s, right .15s ease .47s;
+}
+
+.ms-line-point:before {
+	right: 0px;
+	transform: rotate(45deg);
+}
+
+.ms-line-point:after {
+	left: 0px;
+	transform: rotate(-45deg);
+}
+
+@keyframes ms-bounce {
+	0% {
+		top: -20px;
+	}
+	25% {
+		top: -250px;
+	}
+	50% {
+		top: -275px;
+	}
+	100% {
+		top: -190px;
+	}
+}
+
+@keyframes ms-check-left {
+	0% {
+		transform: rotate(-90deg);
+		left: -10px;
+		height: 75px;
+	}
+	100% {
+		transform: rotate(-45deg);
+		left: 0px;
+		height: 45px;
+	}
+}
+
+@keyframes ms-check-right {
+	0% {
+		transform: rotate(90deg);
+		right: -10px;
+		height: 75px;
+		bottom: -10px;
+	}
+	100% {
+		transform: rotate(45deg);
+		right: 10px;
+		height: 80px;
+		bottom: -15px;
+	}
+}
+
+@keyframes ms-border-fill {
+	0% {
+		border: 10px solid transparent;
+	}
+	100% {
+		border: 10px solid #FFFFFF;
+	}
+}
