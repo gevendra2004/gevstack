@@ -1,0 +1,16 @@
+body {
+  background:#0e0e0e;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+.st0 {
+  display: none;
+}
