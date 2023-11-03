@@ -1,0 +1,113 @@
+body {
+    background-color: #11131e;
+    height: 100vh;
+    margin: 0rem;
+    overflow: hidden; 
+  }
+  
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.5;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
+  }
+  
+  #blob {
+    background-color: white;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+  }
+  
+  #blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(12vmax);
+  }
+  
+  h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    white-space: nowrap;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    margin: 0rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: 3;
+    cursor: pointer;
+  }
+  
+  /* -- Links -- */
+  
+  #links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    padding: 1rem;
+  }
+  
+  .meta-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .meta-link > :is(span, a) {
+    font-family: "Rubik", sans-serif;
+    color: white;
+  }
+  
+  .meta-link > .label {
+    width: 100px; 
+    text-align: right;
+  }
+  
+  .meta-link > a {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .meta-link > a.source {
+    color: rgb(94, 106, 210);
+  }
+  
+  .meta-link > a:is(:hover, :focus) > i {
+    color: white;  
+  }
+  
+  .meta-link > a.youtube {
+    color: rgb(239, 83, 80);
+  }
+  
+  .meta-link > a.youtube > i {
+    padding-top: 0.2rem; 
+  }
+  
+  .meta-link > a > i {
+    height: 1rem;
+    line-height: 1rem;
+  }
