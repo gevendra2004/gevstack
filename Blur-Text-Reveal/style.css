@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: grid;
+  place-items: center;
+  font: 600 100%/1 "Josefin Sans", sans-serif;
+  background-color: #0e0e0e;
+}
+.heading {
+  font-size: clamp(5rem, 16vw, 16.5rem);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  transform-origin: 60% 60%;
+  padding-top: 0.5em;
+  font-size: 100px;
+}
+.heading > div {
+  transform-origin: 50% 100%;
+  overflow: hidden;
+}
