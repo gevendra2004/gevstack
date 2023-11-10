@@ -1,0 +1,119 @@
+body {
+    align-items: center;
+    display: flex;
+    font-family: sans-serif;
+    font-weight: 600;
+    background: #79A7D3;
+    font-size: 26px;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+  }
+  .container {
+    align-items: center;
+    background: #00539C;
+    cursor: pointer;
+    border-radius: 40px;
+    box-shadow: rgba(40, 40, 122, 0.35) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.13) 0px 18px 36px -18px inset;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    position: relative;
+    width: 200px;
+  }
+  .text {
+    color: #EEA47F;
+    position: absolute;
+    transition: opacity 300ms;
+    user-select: none;
+    -moz-user-select: none;
+  }
+  .fingerprint {
+    /* height: 80px; */
+    left: -8px;
+    opacity: 0;
+    position: absolute;
+    stroke: #b6907c;
+    top: -9px;
+    transition: opacity 1ms;
+  }
+  .fingerprint-active {
+    stroke: #EEA47F;
+  }
+  .fingerprint-out {
+    opacity: 1;
+  }
+  .odd {
+    stroke-dasharray: 0px 50px;
+    stroke-dashoffset: 1px;
+    transition: stroke-dasharray 1ms;
+  }
+  .even {
+    stroke-dasharray: 50px 50px;
+    stroke-dashoffset: -41px;
+    transition: stroke-dashoffset 1ms;
+  }
+  .ok {
+    opacity: 0;
+  }
+  .active.container {
+    animation: 6s Container;
+  }
+  .active .text {
+    opacity: 0;
+    animation: 6s Text forwards;
+  }
+  .active .fingerprint {
+    opacity: 1;
+    transition: opacity 300ms 200ms;
+  }
+  .active .fingerprint-base .odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 800ms 100ms;
+  }
+  .active .fingerprint-base .even {
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 800ms;
+  }
+  .active .fingerprint-active .odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 2000ms 1500ms;
+  }
+  .active .fingerprint-active .even {
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 2000ms 1300ms;
+  }
+  .active .fingerprint-out {
+    opacity: 0;
+    transition: opacity 300ms 4100ms;
+  }
+  .active .ok {
+    opacity: 1;
+    animation: 6s Ok forwards;
+  }
+  @keyframes Container {
+    0% { width: 200px }
+    6% { width: 80px }
+    71% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    77% { transform: scale(1); }
+  
+    94% { width: 80px }
+    100% { width: 200px }
+  }
+  @keyframes Text {
+    0% { opacity: 1; transform: scale(1); }
+    6% { opacity: 0; transform: scale(0.5); }
+  
+    94% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes Ok {
+    0% { opacity: 0 }
+    70% { opacity: 0; transform: scale(0); }
+    75% { opacity: 1; transform: scale(1.1); }
+    77% { opacity: 1; transform: scale(1); }
+    92% { opacity: 1; transform: scale(1); }
+    96% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 0 }
+  }
