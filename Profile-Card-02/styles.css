@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #D8E3FA;
+    --gray: #EAEAEC;
+    --primary: #29283F;
+    --primary-violet: #7370F4;
+}
+
+body {
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 24px;
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 24px;
+    background-color: white;
+    overflow: hidden;
+    cursor: pointer;
+    max-width: clamp(320px, 70vw, 740px);
+    min-width: 320px;
+    min-height: 280px;
+    transition: box-shadow .4s ease;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 
+        0px 5px 15px;
+}
+
+.background {
+    flex: 1 1 250px;
+    display: grid;
+    place-items: center;
+}
+
+.background img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.content {
+    flex: 3 1 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+}
+
+.content  h2 {
+    font-size: clamp(
+        1.5rem, 2.5vw, 
+        2rem);
+    font-weight: 700;
+    margin-bottom: clamp(
+        0.35rem, 2vw, 
+        0.55rem
+    );
+}
+
+.content > p {
+    font-size: clamp(1rem, 1.7vw, 1.1rem);
+    font-weight: 500;
+    margin: 6px 0;
+}
+
+.content a {
+    text-decoration: none;
+    color: var(--primary-violet);
+}
+
+.chips {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 12px 0px 16px 0px;
+}
+
+.chip {
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: var(--gray);
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.chip:hover {
+    background-color: var(
+        --primary-violet);
+    color: var(--gray)
+}
+
+.action-button {
+    border-top: 1px solid var(--gray);
+    padding-top: 16px;
+    gap: 12px;
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.action-button a {
+    background-color: var(
+        --primary);
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    flex: 1 0 240px;
+    max-width: 100%;
+    transition: transform 0.1s ease-in-out;
+}
+
+.action-button a:hover {
+    transform: scale(0.98);
+}
+
+.action-buttons a.secondary {
+    background-color: inherit;
+    color: var(--primary);
+    border: 1px solid var(
+        --primary);
+    flex: 1 0 80px;
+}
