@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,600,900);
+
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  background: linear-gradient(#f6f7fc 0%, #d5e1e8 40%);
+  transform-style: preserve-3d;
+  transform: perspective(800px);
+  font-family: "Lato", Sans-serif;
+}
+#card_container {
+  width: 700px;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -175px 0 0 -350px;
+}
+#card {
+  animation: backAn 50s infinite;
+  color: #fff;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  /* background: url(https://riverbeats.life/neworleans/wp-content/uploads/2018/07/Atlantis.png)
+    100% bottom; */
+  background:url(http://riccardotartaglia.it/img/deadpool/back.jpg) 100% bottom;
+  box-shadow:0px 45px 100px rgba(0, 0, 0, 0.4), inset 0 0 0 1000px rgba(156, 27, 27, 0.6);
+  /* box-shadow: 0px 45px 100px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1000px rgba(0, 76, 86, 0.6); */
+}
+#card .text-block {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 3 10 rgba(0, 0, 0, 0.7);
+}
+#card .text-block h1 {
+  font-family: "Rubik", Sans-serif;
+  font-size: 3em;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#card .text-block h1 small {
+  font-size: 0.4em;
+  color: #ccc;
+  position: relative;
+  bottom: 10px;
+}
+#card .text-block h3 {
+  margin: 0;
+  font-weight: 700;
+}
+#card .text-block p {
+  font-weight: 300;
+  width: 60%;
+}
+#card .text-block button {
+  transition: all 0.35s cubic-bezier(0.37, 0.26, 0.35, 1);
+  border: 3px solid #fff;
+  border-radius: 25px;
+  margin-top: 5px;
+  padding: 10px;
+  background: transparent;
+  font-family: "Rubik", Sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+#card .text-block button:hover {
+  background: rgba(156, 27, 27, 0.6);
+}
+#card_container .pg {
+  position: absolute;
+  height: 450px;
+  width: 40%;
+  right: -10px;
+  bottom: 0px;
+  z-index: 2;
+}
+#card_container .pg > img {
+  height: 450px;
+}
+.shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 60%
+  );
+  z-index: 1;
+}
+button {
+  color: #fff;
+}
+@keyframes backAn {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 250%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
