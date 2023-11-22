@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: #1C1C1C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h3 {
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+}
+
+a {
+    font-size: 1em;
+    color: aliceblue;
+    font-weight: 400;
+    will-change: font-weight;
+    text-decoration: none;
+  }
+  
+a:hover {
+  animation-name: getBold;
+  animation-duration: 2500ms;
+  animation-iteration-count: 1;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+a:not(:hover) {
+  animation-name: getThin;
+  animation-duration: 2500ms;
+  animation-iteration-count: 1;
+  font-weight: 400;
+}
+
+@keyframes getBold {
+  0% {
+    font-variation-settings: "wght" 400;
+  }
+  100% {
+    font-variation-settings: "wght" 900;
+  }
+}
+
+@keyframes getThin {
+  0% {
+    font-variation-settings: "wght" 900;
+  }
+  100% {
+    font-variation-settings: "wght" 400;
+  }
+}
