@@ -1,0 +1,58 @@
+:root {
+    --primary: #e32833;
+    --secondary: #ff0c87;
+}
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+.neon-effect {
+    font-weight: 700;
+    font-size: 3rem;
+    font-family: sans-serif;
+}
+.neon-title {
+    position: relative;
+}
+.neon-title::before, .neon-title::after {
+    content: attr(data-text);
+    color: white;
+    filter: blur(0.02em);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.neon-title::after {
+    mix-blend-mode: difference;
+}
+.neon-gradient, .neon-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.neon-gradient {
+    background: linear-gradient(78deg, var(--primary), 
+                var(--secondary));
+    mix-blend-mode: multiply;
+}
+.neon-light {
+    animation: light 5s infinite linear;
+    background: radial-gradient(circle, white, transparent 25%) 
+    0 0 / 25% 25%, radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
+    left: -100%;
+    mix-blend-mode: color-dodge;
+}
+@keyframes light {
+    100% {
+        transform: translate3d(50%, 50%, 0);
+    }
+    
+}
