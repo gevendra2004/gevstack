@@ -1,0 +1,125 @@
+@import url('https://unpkg.com/open-props/normalize.min.css');
+@import url('https://unpkg.com/open-props/open-props.min.css');
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	font-family:  'Google Sans', sans-serif, system-ui;
+	accent-color: #11131e;
+}
+
+pre {
+	padding: var(--size-2);
+	overflow: auto;
+}
+
+ul:not(.closed) > .code-block {
+	height: auto !important;
+	line-height: 1 !important;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+*:focus-visible {
+	outline-color: var(--red-6);
+}
+
+input::-moz-selection {
+	background: var(--red-6);
+	color: var(--text-1);
+	background: hsl(0 100% 50%);
+	color: hsl(0 0% 100%);
+}
+
+input::selection {
+	background: var(--red-6);
+	color: var(--text-1);
+	background: hsl(0 100% 50%);
+	color: hsl(0 0% 100%);
+}
+
+/*
+ * To get the radius or the hypoteneuse.
+ * If you know the inner angle and the length of the side
+ * The end / Math.sin(innerAngle) should provide the radius
+*/
+
+section:first-of-type {
+	min-height: 250px;
+	height: calc(2 * var(--buffer));
+	aspect-ratio: 1;
+	display: grid;
+	place-items: center;
+}
+
+section:last-of-type {
+	display: grid;
+	gap: 2rem;
+}
+
+form {
+	display: inline-grid;
+	grid-template-columns: auto auto;
+	gap: 0.5rem 1rem;
+	justify-content: center;
+}
+
+:where(p,ul,ol,dl,h6) {
+  font-size: var(--font-size-0);
+}
+
+.ring {
+/* 	--character-width: 1ch; */
+	--inner-angle: calc((360 / var(--char-count)) * 1deg);
+	--character-width: 1;
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: calc(var(--font-size, 1) * 1rem);
+	position: relative;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ring {
+  	-webkit-animation: spin 6s infinite linear;
+  	        animation: spin 6s infinite linear;  
+  }
+  @-webkit-keyframes spin {
+    to {
+      rotate: -360deg;
+    }
+  }
+  @keyframes spin {
+    to {
+      rotate: -360deg;
+    }
+  }
+}
+
+.char {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+/* 	line-height: 1; */
+	transform:
+		translate(-50%, -50%)
+		rotate(calc(var(--inner-angle) * var(--char-index)))
+		translateY(var(--radius));
+}
