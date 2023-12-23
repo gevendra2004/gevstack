@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital@1&family=Poppins&family=Sometype+Mono&display=swap');
+
+@font-face {
+    font-family: Creattion ;
+    src: url('font/Creattion\ Demo.otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #0e0c0c;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container{
+    padding: 20px;
+    width: 450px;
+    background-color: #161616;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    max-height: 120px;
+    transition:0.4s; 
+    box-shadow:  0 0 5px #111, 0 0 10px #111, 0 0 5px #111;
+    border: 2px solid #272727;
+}
+
+.container .see_content{
+    padding: 10px;
+    width:120px;
+    height:35px ;
+    background-color: #252525;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    border-bottom-left-radius: 15px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0;
+    text-transform: uppercase;
+
+}
+
+.container .see_content:after{
+    position: absolute;
+    height: 100%;
+    content: '';
+    width: 100%;
+    background-image: linear-gradient(90deg,transparent,#ffffff2a,transparent);
+    top: 0;
+    left: -100%;
+    transition:0.7s; 
+}
+
+.container .see_content:hover::after{
+    left: 100%;
+}
+
+.container .developer{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.container .developer .pic{
+
+    height: 80px;
+    width:80px;
+    padding:10px;
+    border-radius:20px;
+    background-color: #111;
+    position: relative;
+    /* overflow: hidden; */
+    display: grid;
+    place-items: center;
+}
+
+.container .developer .dev_name h3{
+
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.container .developer .dev_name .badge{
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background-color: #111;
+    border-radius: 5px;
+
+}
+
+.container .developer .pic img{
+    width:60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius:50%;
+}
+
+.container  .divider{
+    height: 1px;
+    background-color: #272727;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.contact_details{
+    opacity: 0;
+    transform: translateY(-15px) scale(0.8);
+    transition: 1s;
+    transition-delay: 0.4s;
+
+}
+.active{
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+    transition: 0.4s;
+}
+
+.contact_details .icon_info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.contact_details .icon_info .icon {
+    padding:5px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+.contact_details .icon_info .icon i{
+    font-size:18px;
+    color: #fff !important;
+}
+
+.contact_details .icon_info .details .details_name{
+    color: #b3b3b3a4;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.contact_details .icon_info .details .info{
+    color: #fff;
+    font-size: 15px;
+}
+
+.social_media{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social_media .social{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social_media .made_by{
+
+    font-size: 20px;
+    color: #fff;
+    font-family: Creattion !important;
+}
+
+.social_media .facebook{
+    height: 50px;
+    width: 50px;
+    background-color: #111;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition:0.4s; 
+}
+
+.social_media .facebook:hover{
+    transform: scale(1.1);
+}
+
+.social_media .x:hover{
+    transform: scale(1.1);
+
+}
+
+.social_media .instagram:hover{
+    transform: scale(1.1);
+
+}
+
+.social_media .x{
+    height: 50px;
+    width: 50px;
+    background-color: #111;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition:0.4s; 
+
+
+}
+
+.social_media .instagram{
+    height: 50px;
+    width: 50px;
+    background-color: #111;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+.social_media .facebook a i{
+    color: #ffff;
+}
+.social_media .x a i{
+    color: #ffff;
+}
+
+.social_media .instagram a i{
+    color: #ffff;
+}
