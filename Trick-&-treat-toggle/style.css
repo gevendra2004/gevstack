@@ -1,0 +1,716 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+:root {
+    --sz: 10vmin;
+    --on: #99dc39;
+    --of: #F44336;
+    --lg: var(--of);
+    --ttf: ease-in-out;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    /*#btn:checked + label .thumb*/
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 0%, #55555d, #141414);
+}
+
+.content {
+    position: relative;
+    width: calc(var(--sz) * 5);
+    height: calc(var(--sz) * 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    display: none;
+}
+
+label[for=btn] {
+    position: absolute;
+    width: calc(var(--sz) * 4);
+    height: calc(var(--sz) * 2);
+    background: linear-gradient(0deg, #12172080, #0d121780);
+    border-radius: var(--sz);
+    overflow: hidden;
+    box-shadow:
+        0 0 calc(var(--sz) / 50) calc(var(--sz) / 50) #000000e0,
+        0 0 calc(var(--sz) / 10) calc(var(--sz) / 100) #0b0b10 inset;
+}
+
+
+.thumb {
+    position: absolute;
+    width: calc(calc(var(--sz) * 2) - calc(var(--sz) / 4));
+    height: calc(calc(var(--sz) * 2) - calc(var(--sz) / 4));
+    top: calc(calc(var(--sz) / 10) + calc(var(--sz) / 50));
+    left: calc(calc(var(--sz) / 10) + calc(var(--sz) / 50));
+    background: linear-gradient(0deg, #a1a1a1, #ffffff), linear-gradient(0deg, #212121, #474747);
+    border-radius: var(--sz);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+    transition-delay: 0.5s;
+    transition-duration: 0.5s;
+    transition-timing-function: var(--ttf);
+    box-shadow: calc(var(--sz) / -50) calc(var(--sz) / 50) calc(var(--sz) / 30) 0 #fff2 inset, 0 0 calc(var(--sz) / 10) calc(var(--sz) / 50) #000c;
+    animation: start 1s var(--ttf) 0s 1;
+    background-repeat: no-repeat;
+    background-size: 200% 100%, 100% 100%;
+    background-position: 200% 0, 0 0;
+    background: #fff0;
+}
+
+#btn:checked+label .thumb {
+    left: calc(calc(100% - calc(calc(var(--sz) * 2) - calc(var(--sz) / 3))) - calc(calc(var(--sz) / 10) + calc(var(--sz) / 10)));
+    background-position: 100% 0, 0 0;
+    box-shadow: calc(var(--sz) / -50) calc(var(--sz) / 50) calc(var(--sz) / 30) 0 #fff inset, 0 0 calc(var(--sz) / 10) calc(var(--sz) / 50) #000c;
+}
+
+
+@keyframes start {
+    100% {
+        left: calc(calc(100% - calc(calc(var(--sz) * 2) - calc(var(--sz) / 3))) - calc(calc(var(--sz) / 10) + calc(var(--sz) / 10)));
+    }
+
+    0%,
+    50% {
+        left: calc(calc(var(--sz) / 10) + calc(var(--sz) / 50));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.arms {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    border-radius: 10vmin;
+    overflow: hidden;
+    right: -50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HUMAN */
+
+.arm-human {
+    position: absolute;
+    width: 14vmin;
+    height: 6vmin;
+    background: radial-gradient(circle at 20% 80%, #333 0.45vmin, #fff0 calc(0.45vmin + 1px) 100%), radial-gradient(circle at 10% 80%, #333 0.45vmin, #fff0 calc(0.45vmin + 1px) 100%), #575757;
+    right: -8%;
+    top: calc(50% - 3vmin);
+    border-radius: 0.25vmin;
+    box-shadow: -3vmin -0.5vmin 0.1vmin -0.65vmin #fff;
+
+    /*animation: catch2 1.5s var(--ttf) 0s reverse;*/
+}
+
+.hand-human {
+    position: absolute;
+    background: pink;
+    width: 7vmin;
+    height: 5vmin;
+    left: -9.25vmin;
+    border-radius: 21% 10% 80% 37% / 20% 12% 28% 32%;
+    z-index: 0;
+}
+
+
+.finger {
+    background: pink;
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    border-radius: 3vmin 0 0 3vmin;
+    left: -2vmin;
+    border-left: 2px solid #0006;
+    border-bottom: 1px solid #0004;
+}
+
+.finger:nth-child(2) {
+    top: 25%;
+    width: 60%;
+    left: -40%;
+}
+
+.finger:nth-child(3) {
+    top: 50%;
+    left: -35%;
+    width: 55%;
+}
+
+.finger:nth-child(4) {
+    top: 75%;
+    left: -20%;
+    width: 40%;
+}
+
+.big-human {
+    background: pink;
+    border: 1px solid #0004;
+    width: 34%;
+    height: 26%;
+    position: absolute;
+    left: -9vmin;
+    top: 0.65vmin;
+    border-radius: 3vmin 1vmin 1vmin 3vmin;
+    border-right-color: #fff0;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes catch {
+    0% {
+        right: -8%;
+    }
+
+    25%,
+    33% {
+        right: 25%;
+    }
+
+    66%,
+    80% {
+        right: 0%;
+    }
+
+    100% {
+        right: -5%;
+    }
+}
+
+
+@keyframes catch2 {
+    0% {
+        right: -8%;
+    }
+
+    15%,
+    35% {
+        right: 25%;
+    }
+
+    65%,
+    87.5% {
+        right: 0%;
+    }
+
+    100% {
+        right: -5%;
+    }
+}
+
+#btn:not(:checked)+label .arms .arm-human {
+    animation: catch 1.5s var(--ttf) 0s reverse;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BONES */
+
+
+
+@keyframes check-on {
+    0% {
+        left: -8%;
+    }
+
+    25%,
+    33% {
+        left: -2%;
+    }
+
+    66%,
+    80% {
+        left: 23%;
+    }
+
+    100% {
+        left: -8%;
+    }
+}
+
+@keyframes check-off {
+    0% {
+        left: -8%;
+    }
+
+    25%,
+    33% {
+        left: 0%;
+    }
+
+    66%,
+    80% {
+        left: 25%;
+    }
+
+    100% {
+        left: -8%;
+    }
+}
+
+#btn:checked+label .arms .arm-bones {
+    animation: check-on 1.5s var(--ttf) 0s;
+}
+
+.arm-bones {
+    position: absolute;
+    width: 16vmin;
+    height: 5vmin;
+    left: -8%;
+    top: calc(50% - 2.5vmin);
+    border-radius: 0.25vmin;
+    /* transform: rotateY(180deg); */
+    --bone: #ececec;
+    /* animation: check-off 1.5s var(--ttf) 0s reverse; */
+    --sdw-flt: drop-shadow(-2.5vmin 0vmin 0px var(--bone)) drop-shadow(0 0 1px #000);
+    background: linear-gradient(180deg, #25272d, #24262c, #24262c);
+    box-shadow: 10vmin 0 0 0 #24272d;
+    background-repeat: no-repeat;
+    background-size: 80% 100%;
+    background-position: 125% 50%;
+}
+
+.bone {
+    background: var(--bone);
+    width: 8vmin;
+    height: 2vmin;
+    position: absolute;
+    transform: rotate(0deg);
+    top: 1.5vmin;
+    left: -4vmin;
+    /*filter: var(--sdw-flt);*/
+}
+
+.bone:before,
+.bone:after,
+.big-bones:before,
+.big-bones:after {
+    content: "";
+    background: var(--bone);
+    width: 1.5vmin;
+    height: 1.5vmin;
+    position: absolute;
+    left: -0.5vmin;
+    top: -0.5vmin;
+    border-radius: 100%;
+    box-shadow: 8vmin 0 0 0 var(--bone);
+}
+
+.bone:after {
+    top: calc(100% - 1vmin);
+}
+
+
+.arm-bones>.bone+.bone {
+    top: 1.5vmin;
+    left: 5.5vmin;
+    height: 0.85vmin;
+    width: 10.5vmin;
+    box-shadow: 0 1.15vmin 0 0 var(--bone);
+}
+
+.arm-bones>.bone+.bone:before,
+.arm-bones>.bone+.bone:after {
+    box-shadow: 10.15vmin 0 0 0 var(--bone);
+}
+
+.arm-bones>.bone+.bone:after {
+    top: 100%;
+}
+
+
+
+
+
+/*** Hand ***/
+
+.hand-bones {
+    position: absolute;
+    --balls: var(--bone) 0.5vmin, #fff0 calc(0.5vmin + 1px) 100%;
+    background:
+        radial-gradient(circle at 91% 29%, var(--balls)),
+        radial-gradient(circle at 92% 49%, var(--balls)),
+        radial-gradient(circle at 91% 69%, var(--balls)),
+        radial-gradient(circle at 76% 21%, var(--balls)),
+        radial-gradient(circle at 78% 39%, var(--balls)),
+        radial-gradient(circle at 79% 58%, var(--balls)),
+        radial-gradient(circle at 78% 78%, var(--balls));
+    width: 7vmin;
+    height: 5vmin;
+    left: 16.75vmin;
+    z-index: 0;
+    transform: rotateY(180deg);
+    /*filter: var(--sdw-flt);*/
+}
+
+.hand-bones .bone,
+.big-bones {
+    width: 3vmin;
+    left: 1.35vmin;
+    height: 0.75vmin;
+    border-radius: 0.5vmin 0 0 0.5vmin;
+}
+
+.hand-bones .bone:before,
+.hand-bones .bone:after,
+.big-bones:before,
+.big-bones:after {
+    width: 0.8vmin;
+    height: 0.8vmin;
+    top: -0.25vmin;
+    left: 2.25vmin;
+    box-shadow: none;
+}
+
+.hand-bones .bone:after,
+.big-bones:after {
+    top: 0.125vmin;
+}
+
+.hand-bones .bone:nth-child(1) {
+    transform: rotate(5deg) translateY(-1vmin) translateX(0.15vmin);
+    filter: drop-shadow(-3vmin 0vmin 0px var(--bone));
+}
+
+.hand-bones .bone:nth-child(2) {
+    transform: rotate(0deg) translateX(0.5vmin);
+    filter: drop-shadow(-3vmin 0vmin 0px var(--bone));
+}
+
+.hand-bones .bone:nth-child(3) {
+    transform: rotate(-2deg) translateY(1.15vmin) translateX(0.5vmin);
+    filter: drop-shadow(-3vmin 0vmin 0px var(--bone));
+}
+
+.hand-bones .bone:nth-child(4) {
+    transform: rotate(-5deg) translateY(2.3vmin) translateX(0.5vmin);
+    filter: drop-shadow(-3vmin 0vmin 0px var(--bone));
+}
+
+.big-bones {
+    background: var(--bone);
+    height: 1vmin !important;
+    position: absolute;
+    left: 18.75vmin !important;
+    top: 0.85vmin;
+    z-index: 1;
+    filter: var(--sdw-flt);
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+label[for=btn]:before,
+label[for=btn]:after {
+    --on: #121212;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 7vmin;
+    content: "TRICK";
+    color: #e6e6e6;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    text-shadow: 1px 1px 1px var(--on), -1px 1px 1px var(--on), 1px -1px 1px var(--on), -1px -1px 1px var(--on), 0px 3px 3px #000c;
+}
+
+label[for=btn]:after {
+    content: "TREAT";
+    left: 50%;
+    color: #ff5907;
+    z-index: -1;
+    filter: brightness(2) contrast(1.5);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.thumb * {
+max-width: 0;
+left: 0;
+overflow: hidden;
+width: 100%;
+height: 100%;
+position: absolute;
+bottom: 0vmin;
+transition: max-width 0.5s ease-in-out 0.5s;
+}
+
+#btn:checked + label .thumb * {
+max-width: 100%;
+}
+*/
+
+.thumb,
+#btn:checked+label .thumb {
+    background: #fff0 !important;
+}
+
+#btn:checked+label .thumb {}
+
+
+.trick {
+    max-width: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vmin;
+    transition: max-width 0.5s ease-in-out 0.5s;
+    background-color: #ececec;
+    mix-blend-mode: screen;
+    z-index: 1;
+}
+
+
+#btn:checked+label .thumb .trick {
+    max-width: 100%;
+}
+
+
+
+
+
+
+.treat {
+    max-width: 100%;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vmin;
+    transition: max-width 0.5s ease-in-out 0.5s;
+    background: linear-gradient(0deg, #212121, #474747);
+    z-index: 2;
+    animation: candy-start 1s ease-in-out 0s 1;
+}
+
+@keyframes candy-start {
+
+    0%,
+    50% {
+        max-width: 100%;
+    }
+
+    100% {
+        max-width: 0%;
+    }
+}
+
+
+#btn:checked+label .thumb .treat {
+    max-width: 0%;
+}
+
+
+
+
+.treat:before,
+.treat:after {
+    content: "";
+    --orange: #ffb837 0 50%, #fff0 calc(50% + 1px) 200%;
+    --red: #ff3232 0 50%, #fff0 calc(50% + 1px) 200%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 100% 100%, var(--orange)), radial-gradient(circle at 100% 50%, var(--red)), radial-gradient(circle at 100% 0%, var(--orange)), radial-gradient(circle at 50% 0%, var(--red)), radial-gradient(circle at 0% 0%, var(--orange)), radial-gradient(circle at 0% 50%, var(--red));
+    box-shadow: 0.5vmin 0.5vmin 1vmin 0.5vmin #fff8 inset;
+    /*border-radius: 100%;*/
+}
+
+.treat:after {
+    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 89%);
+    transform: rotate(180deg);
+}
+
+
+
+
+
+.eyes:before,
+.eyes:after {
+    content: "";
+    position: absolute;
+    top: 2vmin;
+    left: 2.75vmin;
+    width: 5.25vmin;
+    height: 7vmin;
+    background: #18202d;
+    border-radius: 100% 60% 65% 65% / 100% 100% 55% 55%;
+    transform: rotate(15deg);
+    box-shadow: 1vmin 1vmin 1vmin 0 #000c inset, -0.05vmin -0.5vmin 0.5vmin #0008, 0.5vmin 0.5vmin 1vmin 0 #fff8 inset, 0vmin 0.5vmin 1vmin 0 #0008;
+}
+
+.eyes:after {
+    left: 9.5vmin;
+    border-radius: 65% 100% 65% 65% / 100% 100% 55% 55%;
+    transform: rotate(-14deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.nose {
+    filter: drop-shadow(0.1vmin 0.2vmin 0.3vmin #fff) drop-shadow(0.1vmin 0.5vmin 1vmin #000);
+}
+
+.nose:before,
+.nose:after {
+    content: "";
+    position: absolute;
+    width: 0.75vmin;
+    height: 1.65vmin;
+    background: #333;
+    border-radius: 100% 60% 65% 65% / 100% 100% 55% 55%;
+    transform: rotate(25deg);
+    left: 7.75vmin;
+    top: 9vmin;
+}
+
+.nose:after {
+    width: 0.85vmin;
+    height: 1.75vmin;
+    transform: rotate(-22deg);
+    margin-left: 1.25vmin;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mouth {
+    background: radial-gradient(circle at 9vmin 1.5vmin, #fff0 13vmin, #333 calc(13vmin + 1px) 13.25vmin, #fff0 calc(13.25vmin + 1px) 100%), radial-gradient(circle at 9vmin 0.5vmin, #fff0 14vmin, #333 calc(14vmin + 1px) 14.25vmin, #fff0 calc(14.25vmin + 1px) 100%), radial-gradient(circle at 9vmin calc(0.5vmin - 1px), #fff0 14vmin, #333 calc(14vmin + 1px) 14.25vmin, #fff0 calc(14.25vmin + 1px) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vmin;
+    filter: drop-shadow(0.1vmin 0.2vmin 0.3vmin #fff) drop-shadow(0.1vmin 0.5vmin 1vmin #000);
+}
+
+.mouth:before,
+.mouth:after {
+    --line: #fff0 0 1vmin, #333 calc(1vmin + 2px), #fff0 calc(1vmin + 3px) 100%;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5vmin;
+    background: linear-gradient(-68deg, var(--line)), linear-gradient(-78deg, var(--line)), linear-gradient(-81deg, var(--line)), linear-gradient(-86deg, var(--line)), linear-gradient(-97deg, var(--line)), linear-gradient(-84deg, var(--line)), linear-gradient(-106deg, var(--line)), linear-gradient(-97deg, var(--line)), linear-gradient(-105deg, var(--line)), linear-gradient(-118deg, var(--line));
+    bottom: 2vmin;
+    /* border-radius: 50% 50% 200% 200%; */
+    background-size: 1.5vmin 1.25vmin, 1.5vmin 1.75vmin, 1.5vmin 1.75vmin, 1.5vmin 2.75vmin, 1.25vmin 2.25vmin, 1.5vmin 2.5vmin, 1.5vmin 1.75vmin, 1.85vmin 1.75vmin, 1.85vmin 1.35vmin, 1.85vmin 1.1vmin;
+    background-repeat: no-repeat;
+    background-position: 1vmin 1.1vmin, 2.5vmin 1.75vmin, 4.25vmin 2.5vmin, 6.25vmin 2.65vmin, 8.25vmin 2.95vmin, 9.85vmin 2.75vmin, 11.25vmin 2.85vmin, 12.55vmin 2.5vmin, 13.85vmin 2.15vmin, 15.05vmin 1.65vmin;
+}
+
+.mouth:after {
+    transform: rotateZ(0deg) rotateY(12deg);
+}
