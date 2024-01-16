@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary: #a80038;
+    --white: #fff;
+    --background: #F8F8FF;
+    --gray: #D3D3D3;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.dropzone-box {
+    color: var(--primary);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 36rem;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.dropzone-box h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.dropzone-area {
+    padding: 1rem;
+    position: relative;
+    margin-top: 1rem;
+    min-height: 16rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px dashed var(--primary);
+    border-radius: 1rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.dropzone-area [type="file"] {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.dropzone-area .file-upload-icon svg {
+    height: 5rem;
+    width: 5rem;
+    margin-bottom: 0.5rem;
+    stroke: var(--primary);
+}
+
+.dropzone--over {
+    border-style: solid;
+    background-color: var(--background);
+}
+
+.dropzone-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--gray);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.dropzone-actions button {
+    flex-grow: 1;
+    min-height: 3rem;
+    font-size: 1.2rem;
+}
+
+.dropzone-actions button:hover {
+    text-decoration: underline;
+}
+
+.dropzone-actions button[type='reset'] {
+    background-color: transparent;
+    border: 1px solid var(--gray);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.dropzone-actions button[type='submit'] {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    cursor: pointer;
+}
