@@ -1,0 +1,99 @@
+:root {
+    --color-light: rgb(203 213 225);
+    --color-mid: rgb(51 65 85);
+    --color-dark: rgb(71 85 105);
+}
+body {
+  background-color: black;
+  color: var(--color-light);
+  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+body::before {
+  content: "Hover or tap the icons.";
+  font-size: 18px;
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 100px);
+  transform: translate(-50%, -50%);
+}
+body::after {
+  content: "By GevStack";
+  position: absolute;
+  bottom: 36px;
+  right: 36px;
+}
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+}
+header {
+  width: 340px;
+  padding: 0 16px;
+  display: flex;
+  border: 3px solid var(--color-dark);
+  border-radius: 16px;
+}
+.iconDiv {
+  height: 36px;
+  width: 36px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 300ms ease-in-out 0s, background-color 300ms linear 200ms;
+}
+.iconSVG {
+  height: 36px;
+  aspect-ratio: 1 / 1;
+}
+.iconDiv:hover,
+.iconDiv:focus-visible {
+  width: 142px;
+  background-color: var(--color-mid);
+  transition: width 300ms ease-in-out 0s, background-color 100ms linear 0s;
+}
+.iconDiv:focus-visible {
+  outline: 1px solid var(--color-mid);
+  outline-offset: 4px;
+}
+.iconDiv:active {
+  opacity: 0.9;
+}
+.iconDiv::after {
+  content: attr(tooltip);
+  margin-left: 12px;
+  animation: fadeIn 600ms linear forwards;
+}
+.spacer {
+  flex-grow: 1;
+}
+.divider {
+  height: 36px;
+  width: 1px;
+  margin: 24px 18px;
+  background-color: var(--color-dark);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+  
