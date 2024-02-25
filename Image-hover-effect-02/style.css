@@ -1,0 +1,104 @@
+@property --radius {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: -5%;
+  }
+  
+  @keyframes scene-transition {
+    to { --radius: 105%; }
+  }
+  
+  .scenes {
+    position: relative;
+    aspect-ratio: 2.4 / 1;
+    outline: 2px solid #ccc;
+  }
+  
+  .scene-1, .scene-2 {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+  }
+  
+  .scene-1 {
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/218/93/103/the-avengers-avengers-endgame-captain-america-iron-man-thanos-hd-wallpaper-preview.jpg);
+  }
+  
+  .scene-2 {
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/14/548/927/the-avengers-avengers-endgame-avengers-endgame-infinity-gauntlet-iron-man-hd-wallpaper-preview.jpg);
+    z-index: -1;
+    -webkit-mask-image: radial-gradient(
+      circle,
+      #fff calc(var(--radius) - 5%),
+      transparent calc(var(--radius) + 5%)
+    );
+  }
+  
+  .scenes:is(:hover, :focus) .scene-2 {
+    z-index: 1;
+    animation: scene-transition 2s linear forwards;
+  }
+  
+  .scene-title {
+    position: absolute;
+    max-width: 45%;
+    margin: min(40px, 4vw);
+    font-size: 1.25em;
+  }
+  
+  .scene-1 .scene-title {
+    top: 0;
+    right: 0;
+    color: #fff;
+    text-align: right;
+  }
+  
+  .scene-2 .scene-title {
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    text-align: left;
+  }
+  
+  /* everything else */
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+    background-color: #111;
+    font: clamp(0.75rem, 0.3rem + 1.9vw, 1.5rem)/1.1 'Koulen', sans-serif;
+    letter-spacing: 0.1em;
+  }
+  
+  .wrapper {
+    display: grid;
+    gap: 30px;
+    width: min(1000px, 100%);
+  }
+  
+  .intro {
+    text-align: center;
+  }
+  
+  .heading {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .heading::before, .heading::after {
+    content: ' — ';
+  }
+  
+  .nudge {
+    margin: 0;
+    color: #888;
+    font-size: 1.25em;
+  }
