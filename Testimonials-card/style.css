@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #E7E6E6;
+}
+
+.testimonial {
+  width: 520px;
+  max-width: 100%;
+  background: #ADEFD1FF;
+  padding: 4em 3em;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075), 0 3px 3px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.075), 0 9px 9px rgba(0, 0, 0, 0.075), 0 17px 17px rgba(0, 0, 0, 0.075);
+  position: relative;
+}
+.testimonial:after {
+  content: "";
+  border: 8px solid #00203FFF;
+  border-radius: 50px;
+  width: 85%;
+  height: 120%;
+  position: absolute;
+  z-index: -1;
+  left: 1.5em;
+  top: -2em;
+}
+.testimonial:before {
+  content: "";
+  position: absolute;
+  bottom: -6.9em;
+  left: 5em;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 70px 100px 0 0;
+  border-color: #00203FFF transparent transparent transparent;
+}
+.testimonial .quote {
+  position: absolute;
+  font-size: 3em;
+  width: 40px;
+  height: 40px;
+  background: #00203FFF;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+}
+.testimonial .quote.open {
+  top: 0;
+  left: 0;
+}
+.testimonial .quote.close {
+  bottom: 0;
+  right: 0;
+}
+.testimonial p {
+  width: 60%;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+.testimonial .source {
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+.testimonial .source span {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.15em;
+  position: relative;
+  margin-left: 1rem;
+  text-align: right;
+}
+.testimonial .source span:before {
+  content: "—";
+  display: inline;
+  margin-right: 5px 2px;
+}
+.testimonial .image {
+  transform: rotate(-5deg);
+  position: absolute;
+  top: 0.5em;
+  right: 1.5em;
+}
+.testimonial .image img {
+  border: 6px solid #E7E6E6;
+  margin: 0;
+  height: 120px;
+  width: 120px;
+  padding: 0;
+}
+.testimonial .image .clip {
+  border: 2px solid #222;
+  border-right: none;
+  height: 65px;
+  width: 20px;
+  position: absolute;
+  right: 30%;
+  top: -15%;
+  border-radius: 25px;
+}
+.testimonial .image .clip:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  height: 10px;
+  width: 16px;
+  border: 2px solid #222;
+  border-bottom: none;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  z-index: 99;
+}
+.testimonial .image .clip:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  height: 40px;
+  width: 16px;
+  border: 2px solid #222;
+  border-top: none;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  z-index: 99;
+}
