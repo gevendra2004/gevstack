@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Knewave|Raleway:500');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fce0df;
+}
+
+.main {
+  width: 500px;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 3em;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main::before,
+.main::after {
+  content: "";
+  width: 0;
+  height: 0;
+  box-sizing: inherit;
+  margin-top: 30px;
+  margin-bottom: -30px;
+  border: 3px solid transparent;
+  position: absolute;
+}
+
+.main::before {
+  top: 0;
+  left: 0;
+}
+
+.main::after {
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.main:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.main:hover::before {
+  border-top-color: #F25978;
+  border-right-color: #F25978;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+
+
+.product__image {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+.container {
+  width: 120%;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.title {
+  font-family: 'Knewave', cursive;
+    font-size: 35px;
+    color:#F25978;
+    margin-bottom: 50px;
+    position: relative;
+    top:0;
+    left: 0;
+    transition: all 1s;
+    z-index: 9;
+}
+.title > span{
+    font-size: 18px;
+    display:block;
+    color: #f47a93;
+}
+.desc{
+    width: 160px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color:#404040;
+    left:0;
+    bottom: 2rem;
+    line-height: 1.8;
+    position: relative;
+    transition: all 1s;
+}
+.main:hover .container .title,
+.main:hover .container .desc{
+    left:40%;
+}
