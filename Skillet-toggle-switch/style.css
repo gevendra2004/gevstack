@@ -1,0 +1,227 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--hue1: 223; /* primary color */
+	--hue2: 123; /* “on” state */
+	--hue3: 38; /* yolk */
+	--hue4: 63; /* egg liquid */
+	--bg: hsl(var(--hue1),90%,90%);
+	--fg: hsl(var(--hue1),90%,10%);
+	--primary: hsl(var(--hue1),90%,50%);
+	--trans-dur: 0.4s;
+	--trans-timing1: cubic-bezier(0.65, 0.05, 0.36, 1);
+	--trans-timing2: cubic-bezier(0.65, -0.05, 0.36, 1.1);
+	font-size: calc(30px + (60 - 30) * (100vw - 320px) / (2560 - 320));
+}
+body,
+input {
+	font: 1em/1.5 sans-serif;
+}
+body {
+	background-color: var(--bg);
+	color: var(--fg);
+	display: flex;
+	height: 100vh;
+	perspective: 480px;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+.switch {
+	animation: switchOff var(--trans-dur) var(--trans-timing1) forwards;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.125em hsla(var(--hue1),90%,50%,0);
+	margin: auto;
+	position: relative;
+	transform-origin: 0 50%;
+	transition: box-shadow 0.15s linear;
+}
+.switch:before,
+.switch:after {
+	content: "";
+	display: block;
+	position: absolute;
+}
+.switch:before {
+	background-color: hsl(var(--hue1),10%,60%);
+	box-shadow: 0.0625em 0 0.0625em hsla(0,0%,10%,0.8) inset;
+	top: calc(50% - 0.125em);
+	right: 100%;
+	width: 0.5em;
+	height: 0.25em;
+	transition: background-color calc(var(--trans-dur) / 2) calc(var(--trans-dur) / 2) var(--trans-timing1);
+}
+.switch:after {
+	background-image:
+		radial-gradient(
+			0.3em 0.3em at 25% 50%,
+			hsla(var(--hue1),10%,20%,0) 30%,
+			hsl(var(--hue1),10%,20%) 35% 45%,
+			hsl(var(--hue1),10%,30%) 50%
+		);
+	border-radius: 0.25em 0.125em 0.125em 0.25em;
+	box-shadow: 0 0 0.125em hsl(var(--hue1),10%,10%) inset;
+	top: calc(50% - 0.25em);
+	right: calc(100% + 0.5em);
+	width: 1.5em;
+	height: 0.5em;
+}
+.switch__input,
+.switch__input:before,
+.switch__input:after {
+	display: block;
+}
+.switch__input {
+	animation: switchOffInput var(--trans-dur) var(--trans-timing1) forwards;
+	background-color: hsl(var(--hue1),10%,30%);
+	border-radius: 1.5em;
+	box-shadow:
+		0 0 0 0.125em hsl(var(--hue1),10%,40%) inset,
+		0 0 0.125em 0.375em hsl(var(--hue1),10%,25%) inset,
+		0 0 0 0.375em hsl(var(--hue1),10%,55%) inset;
+	outline: transparent;
+	position: relative;
+	width: 6em;
+	height: 3em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.switch__input:before,
+.switch__input:after {
+	content: "";
+	position: absolute;
+	transition:
+		background-color var(--trans-dur) var(--trans-timing1),	
+		box-shadow var(--trans-dur) var(--trans-timing1),
+		transform var(--trans-dur) var(--trans-timing1);
+}
+.switch__input:before {
+	background-color: hsla(var(--hue4),90%,50%,0.15);
+	box-shadow: 0.0625em 0.0625em 0 hsla(var(--hue4),0%,100%,0.15) inset;
+	border-radius: 50% 40%;
+	top: 0.625em;
+	left: 0.5em;
+	width: 2em;
+	height: 1.75em;
+}
+.switch__input:after {
+	background-color: hsl(var(--hue3),90%,50%);
+	background-image:
+		radial-gradient(12.5% 12.5% at 20% 25%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%),
+		radial-gradient(15% 30% at 15% 50%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%);
+	border-radius: 50%;
+	box-shadow:
+		-0.0625em 0 0 hsla(var(--hue3),10%,95%,0.9),
+		-0.125em 0 0 hsl(var(--hue3),90%,45%) inset,
+		0.125em 0 0.125em hsla(0,0%,10%,0.3);
+	top: 1em;
+	left: 1em;
+	width: 1em;
+	height: 1em;
+	transform: rotate(45deg);
+	transition-timing-function: var(--trans-timing1), var(--trans-timing1), var(--trans-timing2);
+}
+.switch__sr {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+}
+.switch:has([data-pristine="true"]),
+.switch__input[data-pristine="true"] {
+	animation: none;
+}
+.switch:has(:focus-visible) {
+	box-shadow: 0 0 0 0.125em var(--primary);
+}
+.switch:has(:checked) {
+	animation-name: switchOn;
+}
+.switch:has(:checked):before {
+	background-color: hsl(var(--hue2),90%,60%);
+}
+.switch__input:checked {
+	animation-name: switchOnInput;
+}
+.switch__input:checked:before {
+	background-color: hsl(var(--hue4),10%,95%);
+	box-shadow: -0.0625em -0.0625em 0 hsl(var(--hue4),0%,100%) inset;
+	transform: translateX(3em) rotate(180deg);
+}
+.switch__input:checked:after {
+	background-color: hsl(var(--hue3),90%,50%);
+	box-shadow:
+		-0.0625em -0.0625em 0 hsla(var(--hue3),10%,95%,0.6),
+		-0.125em 0 0 hsl(var(--hue3),90%,45%) inset,
+		0.0625em 0.0625em 0.125em hsla(0,0%,10%,0);
+	transform: translateX(3em) rotate(45deg);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue1),90%,10%);
+		--fg: hsl(var(--hue1),90%,90%);
+	}
+}
+
+/* Animations */
+@keyframes switchOff {
+	from, to { transform: rotateY(0); }
+	50% { transform: rotateY(-15deg); }
+}
+@keyframes switchOffInput {
+	from {
+		background-color: hsl(var(--hue2),90%,30%);
+		box-shadow:
+			0 0 0 0.125em hsl(var(--hue2),90%,40%) inset,
+			0 0 0.125em 0.375em hsl(var(--hue2),90%,25%) inset,
+			0 0 0 0.375em hsl(var(--hue2),90%,55%) inset;
+	}
+	50% {
+		background-color: hsl(var(--hue2),90%,30%);
+		box-shadow:
+			-0.0625em 0 0 0.125em hsl(var(--hue2),90%,40%) inset,
+			0.0625em 0 0.125em 0.375em hsl(var(--hue2),90%,25%) inset,
+			0.0625em 0 0 0.375em hsl(var(--hue2),90%,55%) inset;	
+	}
+	to {
+		background-color: hsl(var(--hue1),10%,30%);
+		box-shadow:
+			0 0 0 0.125em hsl(var(--hue1),10%,40%) inset,
+			0 0 0.125em 0.375em hsl(var(--hue1),10%,25%) inset,
+			0 0 0 0.375em hsl(var(--hue1),10%,55%) inset;
+	}
+}
+@keyframes switchOn {
+	from, to { transform: rotateY(0); }
+	50% { transform: rotateY(15deg); }
+}
+@keyframes switchOnInput {
+	from {
+		background-color: hsl(var(--hue1),10%,30%);
+		box-shadow:
+			0 0 0 0.125em hsl(var(--hue1),10%,40%) inset,
+			0 0 0.125em 0.375em hsl(var(--hue1),10%,25%) inset,
+			0 0 0 0.375em hsl(var(--hue1),10%,55%) inset;
+	}
+	50% {
+		background-color: hsl(var(--hue1),10%,30%);
+		box-shadow:
+			0.0625em 0 0 0.125em hsl(var(--hue1),10%,40%) inset,
+			-0.0625em 0 0.125em 0.375em hsl(var(--hue1),10%,25%) inset,
+			-0.0625em 0 0 0.375em hsl(var(--hue1),10%,55%) inset;	
+	}
+	to {
+		background-color: hsl(var(--hue2),90%,30%);
+		box-shadow:
+			0 0 0 0.125em hsl(var(--hue2),90%,40%) inset,
+			0 0 0.125em 0.375em hsl(var(--hue2),90%,25%) inset,
+			0 0 0 0.375em hsl(var(--hue2),90%,55%) inset;
+	}
+}
