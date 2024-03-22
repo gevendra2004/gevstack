@@ -1,0 +1,103 @@
+:root {
+	--sp: 1s; /* change speed */
+	--bg: #3884ff45; /* change color */
+}
+		
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #101010;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+	
+.content div {
+	width: var(--sz);
+	height: var(--sz) ;
+	box-shadow: 0 0 1vmin 0 var(--bg), -0.25vmin 0.25vmin 1vmin 0 #000b;
+	background: var(--bg);
+	position: absolute;
+	animation: twist calc(var(--sp) * 1) ease-in-out 0s infinite alternate;
+}	
+
+.content div:nth-child(1) {
+	--sz: 70vmin;
+	animation-delay: calc(var(--sp) * 0.07);
+	filter: hue-rotate(15deg);
+}	
+.content div:nth-child(2) {
+	--sz: 65vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 2);
+	filter: hue-rotate(30deg);
+}	
+.content div:nth-child(3) {
+	--sz: 60vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 3);
+	filter: hue-rotate(45deg);
+}	
+.content div:nth-child(4) {
+	--sz: 55vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 4);
+	filter: hue-rotate(60deg);
+}	
+.content div:nth-child(5) {
+	--sz: 50vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 5);
+	filter: hue-rotate(75deg);
+}	
+.content div:nth-child(6) {
+	--sz: 45vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 6);
+	filter: hue-rotate(90deg);
+}	
+.content div:nth-child(7) {
+	--sz: 40vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 7);
+	filter: hue-rotate(105deg);
+}	
+.content div:nth-child(8) {
+	--sz: 35vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 8);
+	filter: hue-rotate(120deg);
+}	
+.content div:nth-child(9) {
+	--sz: 30vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 9);
+	filter: hue-rotate(135deg);
+}	
+.content div:nth-child(10) {
+	--sz: 25vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 10);
+	filter: hue-rotate(150deg);
+}	
+.content div:nth-child(11) {
+	--sz: 20vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 11);
+	filter: hue-rotate(165deg);
+}	
+.content div:nth-child(12) {
+	--sz: 15vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 12);
+	filter: hue-rotate(180deg) brightness(1.5);
+}
+.content div:nth-child(13) {
+	--sz: 10vmin;
+	animation-delay: calc(calc(var(--sp) * 0.07) * 13);
+	filter: hue-rotate(195deg) brightness(2);
+	box-shadow: 0 0 1vmin 0 var(--bg), -0.25vmin 0.25vmin 1vmin 0 #000b, 0 0 6vmin 0 #fffc inset;
+}	
+
+@keyframes twist {
+	  0% { border-radius: 1%;  transform: rotate(-90deg); }
+	100% { border-radius: 50%; transform: rotate(0deg); }
+}
