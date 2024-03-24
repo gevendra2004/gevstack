@@ -1,0 +1,82 @@
+html,body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #d3dce6;
+  font-family: monospace; 
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label{
+  font-size: 24px;
+  font-weight: 700; 
+  cursor: pointer; 
+  color: #525d6f; 
+  opacity: .4; 
+  transition: opacity .4s ease-in-out;
+  display: block; 
+  width: calc(100% - 48px) ;
+  text-align: right; 
+  z-index: 100; 
+  user-select: none;
+}
+input[type="radio"]{
+  display: none;
+  width: 0;
+}
+label:hover, input[type="radio"]:checked+label {
+  opacity: 1; 
+}
+.popup{
+  width: 60%;
+  height: 80%;
+  min-height: 480px; 
+  max-height: 480px; 
+  border-radius: 48px;
+  box-sizing: border-box; 
+  border: 16px solid #ebf0f4;
+  background-color: #dfe6ed;
+  overflow: hidden;
+  box-shadow: 16px 16px 48px #2e364330; 
+}
+.tabs{
+  width: 100%;
+  max-width: 240px;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-around; 
+  position: relative;
+}
+.marker{
+  position: absolute; 
+  width: 100%;
+  height: 200%;
+  display: flex; 
+  flex-direction: column;
+  top: calc(-100% );
+  left: 0;
+  transition: transform .2s ease-in-out; 
+}
+.marker #bottom, .marker #top{
+  background-color: #ebf0f4;
+  box-shadow: 32px 32px 48px #2e364315; 
+}
+.marker #top{
+  height: calc(50%);
+  margin-bottom: auto; 
+  border-radius: 0 0 32px 0; 
+}
+.marker #bottom{
+  height: calc(50% - 72px);
+  border-radius: 0 32px 0 0; 
+}
+#tab1:checked ~ .marker{transform: translateY(calc(calc(50% / 6) * 0));}
+#tab2:checked ~ .marker{transform: translateY(calc(calc(50% / 6) * 1));}
+#tab3:checked ~ .marker{transform: translateY(calc(calc(50% / 6) * 2));}
+#tab4:checked ~ .marker{transform: translateY(calc(calc(50% / 6) * 3));}
+#tab5:checked ~ .marker{transform: translateY(calc(calc(50% / 6) * 4));}
+#tab6:checked ~ .marker{transform: translateY(calc(calc(51% / 6) * 5));}
