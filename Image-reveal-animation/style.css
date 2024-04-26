@@ -1,0 +1,48 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: white;
+}
+
+svg {
+	width: 100vw;
+	height: 700px;
+}
+.image {
+	transition: all 1s ease;
+	cursor: pointer;
+}
+.image:hover {
+	transition: all 1s ease;
+	filter: none;
+	z-index: 100;
+}
+
+.two:hover {
+	transform: scale(1.1) translateX(-60px);
+}
+.three:hover {
+	transform: scale(1.1) translate(-60px, -50px);
+}
+.four:hover {
+	transform: scale(1.1) translate(40px, -70px);
+}
+.six:hover {
+	transform: scale(1.1) translateX(30px);
+}
+.one:hover {
+	transform: scale(1.1) translateX(-20px);
+}
+.five:hover {
+	transform: scale(1.1) translate(-80px, -50px);
+}
+.seven:hover {
+	transform: scale(1.1) translate(-10px, 30px);
+}
+.eight:hover {
+	transform: scale(1.1) translate(10px, -70px);
+}
