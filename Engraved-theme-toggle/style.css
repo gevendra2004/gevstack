@@ -1,0 +1,237 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--light-sh: hsla(var(--hue),10%,95%,0.5);
+	--dark-sh: hsla(var(--hue),10%,15%,0.4);
+	--primary: hsl(var(--hue),90%,50%);
+	--primary-t: hsla(var(--hue),90%,50%,0);
+	--trans-dur: 0.3s;
+	font-size: 40px;
+}
+body,
+input {
+	font: 1em/1.5 sans-serif;
+}
+body {
+	background-color: var(--bg);
+	color: var(--fg);
+	display: flex;
+	height: 100vh;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+.switch,
+.switch__input {
+	-webkit-tap-highlight-color: transparent;
+}
+.switch {
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+	margin: auto;
+}
+.switch__icon,
+.switch__icon-part {
+	display: block;
+}
+.switch__icon {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	transition: filter var(--trans-dur);
+}
+.switch__icon-part {
+	background-color: hsla(var(--hue),10%,10%,0.3);
+	position: absolute;
+	transition:
+		background-color var(--trans-dur),
+		box-shadow var(--trans-dur);
+}
+.switch__icon--light {
+	filter: drop-shadow(0 0 0.125em hsla(var(--hue),90%,70%,0.2));
+}
+.switch__icon--light .switch__icon-part {
+	background-color: hsla(var(--hue),90%,70%,1);
+	border-radius: 0.125em;
+	top: 50%;
+	left: 50%;
+	width: 0.125em;
+	height: 0.2em;
+	transform-origin: 50% 0;
+}
+.switch__icon--light .switch__icon-part--1 {
+	border-radius: 50%;
+	box-shadow:
+		0 0.0625em 0.0625em var(--dark-sh) inset,
+		0 0.0625em 0.0625em var(--light-sh);
+	top: 0.3em;
+	left: 0.3em;
+	width: 0.4em;
+	height: 0.4em;
+}
+.switch__icon--light .switch__icon-part--2 {
+	box-shadow:
+		0 0.0625em 0.0625em var(--dark-sh) inset,
+		0 0.0625em 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(0) translateY(0.3em);
+}
+.switch__icon--light .switch__icon-part--3 {
+	box-shadow:
+		0.0625em 0.0625em 0.0625em var(--dark-sh) inset,
+		0.0625em 0.0625em 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(45deg) translateY(0.3em);
+}
+.switch__icon--light .switch__icon-part--4 {
+	box-shadow:
+		0.0625em 0 0.0625em var(--dark-sh) inset,
+		0.0625em 0 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(90deg) translateY(0.3em);
+}
+.switch__icon--light .switch__icon-part--5 {
+	box-shadow:
+		0.0625em -0.0625em 0.0625em var(--dark-sh) inset,
+		0.0625em -0.0625em 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(135deg) translateY(0.3em);
+}
+.switch__icon--light .switch__icon-part--6 {
+	box-shadow:
+		0 -0.0625em 0.0625em var(--dark-sh) inset,
+		0 -0.0625em 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(180deg) translateY(0.3em);
+}
+.switch__icon--light .switch__icon-part--7 {
+	box-shadow:
+		-0.0625em -0.0625em 0.0625em var(--dark-sh) inset,
+		-0.0625em -0.0625em 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(225deg) translateY(0.3em);
+}
+.switch__icon--light .switch__icon-part--8 {
+	box-shadow:
+		-0.0625em 0 0.0625em var(--dark-sh) inset,
+		-0.0625em 0 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(270deg) translateY(0.3em);
+}
+.switch__icon--light .switch__icon-part--9 {
+	box-shadow:
+		-0.0625em 0.0625em 0.0625em var(--dark-sh) inset,
+		-0.0625em 0.0625em 0.0625em var(--light-sh);
+	transform: translateX(-50%) rotate(315deg) translateY(0.3em);
+}
+.switch__icon--dark {
+	filter:
+		drop-shadow(0 0 0.125em hsla(var(--hue),90%,70%,0))
+		drop-shadow(0 0.0625em 0.0625em var(--light-sh));
+}
+.switch__icon--dark .switch__icon-part--1 {
+	background-color: transparent;
+	border-radius: 50%;
+	clip-path: url(#moon);
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+.switch__icon--dark .switch__icon-part--1a {
+	border-radius: 50%;
+	box-shadow: 0 0.0625em 0.0625em var(--dark-sh) inset;
+	width: 100%;
+	height: 100%;
+}
+.switch__icon--dark .switch__icon-part--1b {
+	background-color: transparent;
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+.switch__icon--dark .switch__icon-part--1b:before {
+	background-color: var(--bg);
+	border-radius: 50%;
+	box-shadow:
+		0 0.0625em 0.0625em var(--dark-sh),
+		0 0.0625em 0.0625em var(--light-sh) inset;
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	left: auto;
+	transition: background-color var(--trans-dur);
+	width: 62.5%;
+	height: 62.5%;
+}
+.switch__input {
+	background-color: hsla(var(--hue),10%,10%,0.1);
+	border-radius: 0.75em;
+	box-shadow:
+		0 0.0625em 0.125em var(--dark-sh) inset,
+		0 0.0625em 0.125em var(--light-sh),
+		0 0 0 0.125em var(--primary-t);
+	display: block;
+	outline: transparent;
+	position: relative;
+	width: 2.5em;
+	height: 1.5em;
+	transition: box-shadow var(--trans-dur);
+	-webkit-appearance: none;
+	appearance: none;
+}
+.switch__input:focus-visible {
+	box-shadow:
+		0 0.0625em 0.125em var(--dark-sh) inset,
+		0 0.0625em 0.125em var(--light-sh),
+		0 0 0 0.125em var(--primary);
+}
+.switch__input:before {
+	background-color: var(--primary);
+	border-radius: 50%;
+	box-shadow: 0 0.0625em 0.125em hsla(var(--hue),10%,10%,0.5);
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0.25em;
+	left: 0.25em;
+	width: 1em;
+	height: 1em;
+	transition:
+		background-color var(--trans-dur),
+		box-shadow var(--trans-dur),
+		transform var(--trans-dur) cubic-bezier(0.65,0.05,0.34,1);
+}
+.switch__input:checked:before {
+	transform: translateX(1em);
+}
+.switch__label {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+}
+
+/* Dark theme */
+body:has(.switch__input:checked) {
+	--bg: hsl(var(--hue),10%,30%);
+	--fg: hsl(var(--hue),10%,90%);
+	--light-sh: hsla(var(--hue),10%,55%,0.5);
+	--dark-sh: hsla(var(--hue),10%,15%,0.4);
+	--primary: hsl(var(--hue),90%,60%);
+}
+body:has(.switch__input:checked) .switch__icon--light {
+	filter: drop-shadow(0 0 0.125em hsla(var(--hue),90%,75%,0));
+}
+body:has(.switch__input:checked) .switch__icon--light .switch__icon-part {
+	background-color: hsla(var(--hue),10%,10%,0.3);
+}
+body:has(.switch__input:checked) .switch__icon--dark {
+	filter:
+		drop-shadow(0 0 0.125em hsla(var(--hue),90%,75%,0.6))
+		drop-shadow(0 0.0625em 0.0625em var(--light-sh));
+}
+body:has(.switch__input:checked) .switch__icon--dark .switch__icon-part--1a {
+	background-color: hsla(var(--hue),90%,75%,1);
+}
