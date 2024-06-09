@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('https://ggayane.github.io/css-experiments/Inconsolata-VF.ttf');
+    font-weight: 275 900;
+    font-stretch: 50% 200%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 8em;
+    font-family: 'Inconsolata';
+  }
+
+  main {
+    white-space: nowrap;
+    width: 80vw;
+    margin: auto;
+  }
+
+  .static {
+    font-size: 30px;
+    font-variation-settings: "wght"900, "wdth"200;
+  }
+
+  .variable {
+    display: flex;
+    font-variation-settings: "wght"275, "wdth"50;
+    text-align: center;
+    animation: swapthings 3s infinite both cubic-bezier(0.17, 0.04, 0.04, 0.99);
+  }
+
+  .work {
+    animation: swapthings2 3s infinite both cubic-bezier(0.17, 0.04, 0.04, 0.99);
+  }
+
+
+  @keyframes swapthings {
+    0% {
+      font-variation-settings: "wght"275, "wdth"50;
+    }
+
+    50% {
+      font-variation-settings: "wght"900, "wdth"200;
+    }
+
+    100% {
+      font-variation-settings: "wght"275, "wdth"50;
+    }
+  }
+
+  @keyframes swapthings2 {
+    0% {
+      font-variation-settings: "wght"900, "wdth"200;
+    }
+
+    50% {
+      font-variation-settings: "wght"275, "wdth"50;
+    }
+
+    100% {
+      font-variation-settings: "wght"900, "wdth"200;
+    }
+  }
