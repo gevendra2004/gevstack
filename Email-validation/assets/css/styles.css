@@ -1,0 +1,140 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --default-color: hsl(200, 4%, 60%);
+  --active-color: hsl(200, 70%, 56%);
+  --error-color: hsl(353, 64%, 53%);
+  --border-color: hsl(200, 4%, 64%);
+  --text-color: hsl(200, 4%, 24%);
+  --body-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input {
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+/*=============== INPUT FIELD ===============*/
+.container {
+  height: 100vh;
+  margin-inline: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.form {
+  width: 100%;
+  max-width: 340px;
+}
+
+.form__field {
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  border: 3px solid var(--default-color);
+  padding: 1.4rem 1.4rem 1.4rem 4.5rem;
+  border-radius: 4rem;
+  outline: none;
+  font-weight: 500;
+  transition: border-color .4s, box-shadow .4s;
+}
+
+.form__input::placeholder {
+  color: var(--text-color);
+}
+
+.form__label {
+  position: absolute;
+  left: 1.5rem;
+  top: -.65rem;
+  background-color: var(--body-color);
+  padding: 2px;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+}
+
+.form__icon {
+  height: max-content;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+}
+
+.form__field::after {
+  content: "";
+  position: absolute;
+  height: 28px;
+  border: 1px solid var(--border-color);
+  left: 3.75rem;
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+}
+
+.form__error {
+  position: absolute;
+  left: 1.5rem;
+  bottom: -1.5rem;
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+  color: var(--error-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+
+.form__error i {
+  font-size: 1rem;
+}
+
+.form__error span {
+  font-size: var(--smaller-font-size);
+  font-weight: 500;
+}
+
+/* Active focus & valid field color */
+.form__input:focus,
+.valid .form__input {
+  border-color: var(--active-color);
+  box-shadow: 0 8px 24px hsla(200, 70%, 56%, .3);
+}
+
+/* Invalid field color */
+.invalid .form__input {
+  border-color: var(--error-color);
+  box-shadow: 0 8px 24px hsla(353, 64%, 53%, .3);
+}
+
+.invalid .form__error {
+  opacity: 1;
+}
