@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+
+html,
+body {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+div.container {
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.container a {
+  color: #fff;
+  text-decoration: none;
+  font: 40px Raleway;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.brown {
+  background: #000;
+}
+
+/* Highlight text out  */
+div.highlightTextOut a {
+  color: rgba(255, 255, 255, 0.445);
+}
+
+div.highlightTextOut a:before,
+div.highlightTextIn a:before {
+  position: absolute;
+  color: #fff;
+  font-weight: 800;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+  overflow: hidden;
+  content: attr(alt);
+  transition: all 0.3s;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+div.highlightTextOut a:hover:before,
+div.highlightTextIn a:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Highlight text in  */
+div.highlightTextIn a {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+div.highlightTextIn a:before {
+  transform: scale(1.2);
+}
