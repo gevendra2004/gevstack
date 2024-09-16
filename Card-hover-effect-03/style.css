@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.cards {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.card {
+  padding: 2rem 1.5rem;
+  max-width: 300px;
+  background-color: #323539;
+  color: hsl(0, 0%, 90%);
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: hsl(320, 100%, 40%);
+    clip-path: circle(18.4% at 100% 0);
+    transition: clip-path 0.5s ease;
+  }
+
+  & .card-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  & .card-cta {
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: hsl(0, 0%, 90%);
+
+    & svg {
+      padding-left: 0.25rem;
+    }
+
+    & svg path {
+      fill: hsl(0, 0%, 90%);
+    }
+  }
+
+  &:hover {
+    &::before {
+      clip-path: circle(150% at 100% 0%);
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      background-color: hsl(332, 100%, 40%);
+    }
+  }
+  &:nth-child(3) {
+    &::before {
+      background-color: hsl(216, 100%, 40%);
+    }
+  }
+}
