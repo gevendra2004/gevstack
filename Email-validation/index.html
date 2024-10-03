@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <!----------------- REMIXICONS ----------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!----------------- CSS ----------------->
+    <link rel="stylesheet" href="style.css" />
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Email validation - GevstacK</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" class="form" id="form">
+        <div class="form-field">
+          <label for="Email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            placeholder="Write your email"
+            required
+            id="email"
+            class="form-input"
+          />
 
-      <title>Email validation - Bedimcode</title>
-   </head>
-   <body>
-       <div class="container">
-         <form action="" class="form" id="form">
-            <div class="form__field">
-               <label for="email" class="form__label">Email Address</label>
-               <input type="email" placeholder="Write your email"required id="email" class="form__input">
-               
-               <i class="ri-mail-line form__icon"></i>
+          <i class="ri-mail-line form-icon"></i>
 
-               <div class="form__error">
-                  <i class="ri-information-fill"></i>
-                  <span>Invalid email format.</span>
-               </div>
-            </div>
-         </form>
-       </div>
-      
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+          <div class="form-error">
+            <i class="ri-information-fill"></i>
+            <span>Invalid email format.</span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!------------------ MAIN JS ----------------->
+    <script src="main.js"></script>
+  </body>
 </html>
