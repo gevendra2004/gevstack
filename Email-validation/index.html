@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----------------- REMIXICONS ----------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!----------------- CSS ----------------->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Email validation - GevstacK</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" class="form" id="form">
+        <div class="form-field">
+          <label for="Email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            placeholder="Write your email"
+            required
+            id="email"
+            class="form-input"
+          />
+
+          <i class="ri-mail-line form-icon"></i>
+
+          <div class="form-error">
+            <i class="ri-information-fill"></i>
+            <span>Invalid email format.</span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!------------------ MAIN JS ----------------->
+    <script src="main.js"></script>
+  </body>
+</html>
