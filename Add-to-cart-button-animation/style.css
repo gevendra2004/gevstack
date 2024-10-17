@@ -1,0 +1,553 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eceffc;
+  font-family: "Montserrat", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+button {
+  background-color: #fff700;
+  color: black;
+  border: none;
+  padding: 0 20px;
+  line-height: 50px;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 3px 0px #d4d4d4;
+  box-shadow: -2px 3px 0px #d4d4d4;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition-property: line-height;
+  -o-transition-property: line-height;
+  transition-property: line-height;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.tapis-roulant {
+  position: relative;
+  background-color: gray;
+  line-height: 0px;
+}
+
+.tapis-roulant span {
+  opacity: 0;
+}
+
+.tapis-roulant > div:nth-child(2) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 2;
+  background-color: gray;
+}
+
+.tapis-roulant > div:nth-child(2) > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20px;
+  width: 200%;
+  border-radius: 30px;
+  -webkit-animation-name: roule;
+  animation-name: roule;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.tapis-roulant i {
+  height: 100%;
+  width: 2px;
+  background-color: #656565;
+  display: inline-block;
+  -webkit-transform: skew(52deg, 20deg);
+  -ms-transform: skew(52deg, 20deg);
+  transform: skew(52deg, 20deg);
+  margin: 0 2%;
+}
+
+/* caisse */
+.tapis-roulant > div:nth-child(3) {
+  position: absolute;
+  left: 55%;
+  width: 35px;
+  height: 0;
+  background-color: #000000;
+  z-index: 1;
+  bottom: 0;
+  -webkit-animation-name: caisse;
+  animation-name: caisse;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-delay: 0.05s;
+  animation-delay: 0.05s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  border: 2px solid #a0a0a0;
+}
+
+.tapis-roulant > div:nth-child(3) > div:first-child {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 75%;
+  background-image: -o-linear-gradient(
+    81deg,
+    rgba(84, 84, 84, 0),
+    hsl(0deg 0% 56% / 61%) 70%
+  );
+  background-image: linear-gradient(
+    9deg,
+    rgba(84, 84, 84, 0),
+    hsl(0deg 0% 56% / 61%) 70%
+  );
+  top: 0;
+}
+
+.tapis-roulant > div:nth-child(3) > div:nth-child(2) {
+  background: red;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  -webkit-box-shadow: -4px 16px 20px 12px red;
+  box-shadow: -4px 16px 20px 12px red;
+  z-index: 6;
+  border-radius: 100%;
+}
+
+.tapis-roulant > div:nth-child(4) {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 34px;
+  overflow: hidden;
+}
+
+.tapis-roulant > div:nth-child(4) > div:first-child {
+  position: absolute;
+  width: 29px;
+  height: 100%;
+  background: #ebca79;
+  -webkit-box-shadow: 0 2px 0 0px rgb(0 0 0 / 25%),
+    inset 0 1px 0 0 rgb(255 255 255 / 20%);
+  box-shadow: 0 2px 0 0px rgb(0 0 0 / 25%),
+    inset 0 1px 0 0 rgb(255 255 255 / 20%);
+  z-index: 9;
+  -webkit-animation-name: objet;
+  animation-name: objet;
+  -webkit-animation-duration: 3.8s;
+  animation-duration: 3.8s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  left: -10px;
+  bottom: 3px;
+}
+
+.tapis-roulant > div:nth-child(4) > div:first-child:after {
+  content: "";
+  width: 100%;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.12);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tapis-roulant > div:nth-child(4) > div:first-child > div:first-child {
+  width: 3px;
+  height: 3px;
+  background: #37353a;
+  position: absolute;
+  border-radius: 50%;
+  left: 5px;
+  top: 8px;
+}
+
+.tapis-roulant > div:nth-child(4) > div:first-child > div:first-child:after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #37353a;
+  position: absolute;
+  border-radius: 50%;
+  left: 16px;
+}
+
+.tapis-roulant > div:nth-child(4) > div:first-child > div:nth-child(2) {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-style: solid;
+  border-width: 3px;
+  border-color: transparent #fff #fff #fff;
+  border-radius: 0 0 50% 50%;
+  left: 7px;
+  top: 8px;
+  z-index: 10;
+  -webkit-box-shadow: 0 4px 0 0px rgb(0 0 0 / 20%);
+  box-shadow: 0 4px 0 0px rgb(0 0 0 / 20%);
+  -webkit-transition: height 0.5s, -webkit-transform 0.5s;
+  transition: height 0.5s, -webkit-transform 0.5s;
+  -o-transition: transform 0.5s, height 0.5s;
+  transition: transform 0.5s, height 0.5s;
+  transition: transform 0.5s, height 0.5s, -webkit-transform 0.5s;
+}
+
+button > div:nth-child(5) {
+  position: absolute;
+  top: -40px;
+  right: 10px;
+  color: orange;
+  display: none;
+  font-size: 12px;
+  z-index: 9;
+}
+
+.tapis-roulant.added > div:nth-child(5) {
+  display: block;
+  -webkit-animation-name: fadeOutTop;
+  animation-name: fadeOutTop;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+button > div:nth-child(6) {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  display: none;
+  color: red;
+}
+
+.tapis-roulant.canceled > div:nth-child(6) {
+  display: block;
+  -webkit-animation-name: scaleZoomOutTop;
+  animation-name: scaleZoomOutTop;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  opacity: 0;
+}
+
+.container {
+  position: relative;
+  height: 60px;
+  margin: auto;
+  line-height: 60px;
+}
+
+@-webkit-keyframes roule {
+  from {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  to {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes roule {
+  from {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  to {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes objet {
+  from {
+    left: -10px;
+  }
+
+  to {
+    left: 200px;
+  }
+}
+
+@keyframes objet {
+  from {
+    left: -10px;
+  }
+
+  to {
+    left: 200px;
+  }
+}
+
+@-webkit-keyframes caisse {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 22px;
+  }
+}
+
+@keyframes caisse {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 22px;
+  }
+}
+
+@-webkit-keyframes fadeOutTop {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fadeOutTop {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+.scaleZoomOutTop {
+  -webkit-animation-name: scaleZoomOutTop;
+  animation-name: scaleZoomOutTop;
+}
+
+@-webkit-keyframes scaleZoomOutTop {
+  30%,
+  50% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+}
+
+@keyframes scaleZoomOutTop {
+  30%,
+  50% {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+}
+
+.caddie {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 17px;
+  vertical-align: -6px;
+  margin-right: 10px;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.tapis-roulant .caddie {
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+  font-size: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.caddie__body {
+  width: 92%;
+  height: 60%;
+  background: #edefff;
+  -webkit-transform: skew(-6deg);
+  -ms-transform: skew(-6deg);
+  transform: skew(-6deg);
+  position: absolute;
+  top: 0;
+  right: 0px;
+  border-radius: 2px;
+  border: 1px solid black;
+  border-left: none;
+}
+
+.caddie__body-left {
+  position: absolute;
+  background-color: #ced5ff;
+  left: -1%;
+  top: 1%;
+  width: 84%;
+  height: 60%;
+  border-left: 1px solid black;
+  border-radius: 2px;
+  border-top-left-radius: 8%;
+  border-top: 1px solid black;
+  border-top-right-radius: 0;
+}
+
+.caddie__top {
+  position: absolute;
+  top: -23%;
+  left: -2.5%;
+  width: 2px;
+  height: 27%;
+  -webkit-transform: skew(19deg);
+  -ms-transform: skew(19deg);
+  transform: skew(19deg);
+  background-color: black;
+}
+
+.caddie__top-support {
+  position: absolute;
+  top: -30%;
+  left: -12.5%;
+  background-color: #757575;
+  width: 4px;
+  height: 2px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.caddie__trou {
+  width: 17px;
+  height: 1px;
+  background-color: #7f8dd8;
+  border-radius: 10px;
+  position: absolute;
+  top: 4px;
+  left: 7%;
+  z-index: 9;
+}
+
+.caddie__trou2 {
+  width: 11px;
+  height: 1px;
+  background-color: #7f8dd8;
+  border-radius: 10px;
+  position: absolute;
+  top: 9px;
+  left: 18%;
+  z-index: 9;
+}
+
+.caddie__trou3 {
+  width: 11px;
+  height: 1px;
+  background-color: #7f8dd8;
+  border-radius: 10px;
+  position: absolute;
+  top: 6px;
+  left: 18%;
+  z-index: 9;
+}
+
+.caddie__roue {
+  position: absolute;
+  bottom: -1px;
+  left: 2px;
+  width: 3px;
+  height: 3px;
+  background-color: #808080;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.caddie__roue2 {
+  position: absolute;
+  bottom: -1px;
+  left: 11px;
+  width: 3px;
+  height: 3px;
+  background-color: #808080;
+  border-radius: 100%;
+  border: 1px solid black;
+}
