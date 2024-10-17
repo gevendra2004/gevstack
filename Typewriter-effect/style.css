@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px");
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #df9e9e;
+  outline: hidden;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  overflow: hidden;
+}
+
+div {
+  position: relative;
+  width: 83%;
+  height: 175px;
+  margin-top: 17%;
+}
+
+h1 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  font-size: 45px;
+}
+
+h1:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  line-height: 48px;
+  left: 30%;
+  top: 50%;
+  animation: abomination1 7.5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes abomination1 {
+  0% {
+    content: "T";
+  }
+  4% {
+    content: "Th";
+  }
+  8% {
+    content: "The";
+  }
+  12% {
+    content: "The ";
+  }
+  16% {
+    content: "The T";
+  }
+  20% {
+    content: "The Ty";
+  }
+  24% {
+    content: "The Typ";
+  }
+  28% {
+    content: "The Type";
+  }
+  32% {
+    content: "The Typew";
+  }
+  36% {
+    content: "The Typewr";
+  }
+  40% {
+    content: "The Typewri";
+  }
+  44% {
+    content: "The Typewrit";
+  }
+  48% {
+    content: "The Typewrite";
+  }
+  52% {
+    content: "The Typewriter";
+  }
+  56% {
+    content: "The Typewriter";
+  }
+  60% {
+    content: "The Typewriterr";
+  }
+  64% {
+    content: "The Typewriter";
+  }
+  68% {
+    content: "The Typewriter ";
+  }
+  72% {
+    content: "The Typewriter E";
+  }
+  76% {
+    content: "The Typewriter Ef";
+  }
+  80% {
+    content: "The Typewriter Efe";
+  }
+  84% {
+    content: "The Typewriter Efe";
+  }
+  88% {
+    content: "The Typewriter Eff";
+  }
+  92% {
+    content: "The Typewriter Effe";
+  }
+  96% {
+    content: "The Typewriter Effec";
+  }
+  100% {
+    content: "The Typewriter Effect";
+  }
+}
