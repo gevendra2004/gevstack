@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --color-white: hsl(0, 0%, 95%);
+  --color-black: hsl(0, 0%, 10%);
+  --color-primary: hsl(202, 87%, 60%);
+
+  --color-bg: hsl(0, 0%, 75%);
+  --color-accordion-bg: hsl(0, 0%, 85%);
+  --color-accordion--active-bg: hsl(0, 0%, 90%);
+  --color-border: hsl(0, 0%, 85%);
+
+  --p-inline: clamp(0.75rem, 0.6286rem + 0.5178vw, 2rem);
+  --p-block: 1rem;
+  --row-gap: 2rem;
+  --border-radius: 1.25rem;
+
+  --fs-small: clamp(0.75rem, 0.6286rem + 0.5178vw, 0.95rem);
+  --fs-medium: clamp(1rem, 0.6966rem + 1.0945vw, 1.25rem);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+  background-color: var(--color-bg);
+  color: var(--color-black);
+}
+.accordion-section {
+  width: min(100%, 1280px);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  transition: background-color 0.33s linear;
+  border-bottom: 2px solid var(--color-border);
+
+  & .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--fs-medium);
+    position: relative;
+    padding-inline: var(--p-inline);
+    padding-block: calc(var(--p-block) * 2);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 0%;
+      visibility: hidden;
+      width: 4px;
+      background-color: var(--color-primary);
+      transition: height 0.33s linear;
+    }
+  }
+
+  & .icon {
+    height: 28px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    box-shadow: rgba(100, 100, 111, 0.4) 1px 1px 20px 0px;
+    cursor: pointer;
+    transition: transform 0.33s linear;
+  }
+
+  & .accordion-content {
+    font-size: var(--fs-small);
+    text-wrap: balance;
+    height: 0;
+    overflow: hidden;
+    padding-inline: var(--p-inline);
+  }
+
+  &.active {
+    background-color: var(--color-accordion--active-bg);
+
+    & .accordion-header::before {
+      height: 100%;
+      visibility: visible;
+    }
+
+    & .accordion-content {
+      height: fit-content;
+      padding-bottom: calc(var(--p-block) * 2);
+    }
+
+    & .icon {
+      background-color: var(--color-primary);
+      transform: rotate(90deg);
+
+      & svg path {
+        fill: var(--color-white);
+      }
+    }
+  }
+}
