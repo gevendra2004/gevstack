@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  font-family: "Inter", sans-serif;
+  perspective: 1000px;
+  overflow-x: hidden;
+}
+
+.btn {
+  position: relative;
+  padding: 1.5rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  min-width: 200px;
+  z-index: 1;
+}
+
+/* Magnetic Field Button */
+.magnetic {
+  background: #2d2d2d;
+  border: none;
+  overflow: visible;
+}
+
+.particles-field {
+  position: absolute;
+  inset: -100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.magnetic:hover .particles-field {
+  opacity: 1;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(0);
+  }
+  50% {
+    transform: translate(calc(var(--x) * -1), calc(var(--y) * -1)) scale(1);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0);
+  }
+}
