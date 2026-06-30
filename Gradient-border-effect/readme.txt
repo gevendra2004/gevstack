@@ -1,0 +1,1 @@
+run the code on server or vs code live server to see the output
